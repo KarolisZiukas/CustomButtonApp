@@ -7,10 +7,4 @@ class MainViewModel2: BaseViewModel() {
 
   val isLoading = MutableLiveData<Boolean>()
 
-  override fun onCreate() {
-    super.onCreate()
-    isLoading.value = false
-  }
-
-
 }

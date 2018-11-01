@@ -8,8 +8,6 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
-
-
 class BaseApplication: DaggerApplication(), HasActivityInjector {
 
   @Inject
@@ -22,6 +20,4 @@ class BaseApplication: DaggerApplication(), HasActivityInjector {
   override fun activityInjector(): DispatchingAndroidInjector<Activity> {
     return dispatchingActivityInjector
   }
-
-
 }

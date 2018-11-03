@@ -12,7 +12,7 @@ class MainFragment2 @Inject constructor():
 {
 
   override val layoutId: Int  = R.layout.main_fragment
-  override val viewModelClass = MainViewModel2::class.java
+  override val viewModelClass = MainViewModel2::class
 
   companion object {
     fun newInstance() = MainFragment2()
@@ -24,4 +24,6 @@ class MainFragment2 @Inject constructor():
       Log.d("Observed", "Observed")
     })
   }
+
+
 }

@@ -1,27 +1,20 @@
 package com.example.bd0631.baseproject.base
 
-import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.bd0631.baseproject.ViewModelFactory
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import org.koin.android.viewmodel.ext.android.viewModelByClass
+import kotlin.reflect.KClass
 
-abstract class BaseFragment<T : ViewDataBinding, U : BaseViewModel> : DaggerFragment() {
 
-  @Inject
-  lateinit var factory: ViewModelFactory<U>
-
-  protected open val viewModel: U by lazy {
-    ViewModelProviders.of(this, factory).get(viewModelClass)
-  }
+abstract class BaseFragment<T : ViewDataBinding, U : BaseViewModel> : Fragment() {
 
   abstract val layoutId: Int
-  abstract val viewModelClass: Class<U>
+  abstract val viewModelClass: KClass<U>
 
   private lateinit var databinding: T
 
@@ -33,12 +26,11 @@ abstract class BaseFragment<T : ViewDataBinding, U : BaseViewModel> : DaggerFrag
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
+    val viewModel by viewModelByClass(viewModelClass)
     onObserve(viewModel)
     super.onCreate(savedInstanceState)
   }
 
   protected open fun onObserve(viewModel: U) {
   }
-
-
 }

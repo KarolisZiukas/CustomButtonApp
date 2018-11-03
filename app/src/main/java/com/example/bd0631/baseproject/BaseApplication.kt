@@ -1,23 +1,21 @@
 package com.example.bd0631.baseproject
 
-import android.app.Activity
-import com.example.bd0631.baseproject.di.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import javax.inject.Inject
+import android.app.Application
+import com.example.bd0631.baseproject.mainFragment2.MainViewModel2
+import org.koin.android.ext.android.startKoin
+import org.koin.android.viewmodel.ext.koin.viewModel
+import org.koin.dsl.module.module
 
-class BaseApplication: DaggerApplication(), HasActivityInjector {
+class BaseApplication: Application() {
 
-  @Inject
-  lateinit var dispatchingActivityInjector: DispatchingAndroidInjector<Activity>
-
-  override fun applicationInjector(): AndroidInjector<out DaggerApplication>? {
-    return DaggerAppComponent.builder().application(this).build()
+  private val appModule = module {
+    viewModel { MainViewModel2()}
   }
 
-  override fun activityInjector(): DispatchingAndroidInjector<Activity> {
-    return dispatchingActivityInjector
+  override fun onCreate() {
+    super.onCreate()
+    startKoin(this, listOf(appModule))
   }
+
+
 }

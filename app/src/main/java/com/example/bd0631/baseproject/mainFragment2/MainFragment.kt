@@ -7,7 +7,7 @@ import com.example.bd0631.baseproject.base.BaseFragment
 import com.example.bd0631.baseproject.databinding.MainFragmentBinding
 import javax.inject.Inject
 
-class MainFragment2 @Inject constructor():
+class MainFragment @Inject constructor():
     BaseFragment<MainFragmentBinding, MainViewModel2>()
 {
 
@@ -15,7 +15,7 @@ class MainFragment2 @Inject constructor():
   override val viewModelClass = MainViewModel2::class
 
   companion object {
-    fun newInstance() = MainFragment2()
+    fun newInstance() = MainFragment()
   }
 
   override fun onObserve(viewModel: MainViewModel2) {

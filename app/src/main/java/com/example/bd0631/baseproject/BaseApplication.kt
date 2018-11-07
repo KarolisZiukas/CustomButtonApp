@@ -12,14 +12,10 @@ import org.koin.dsl.module.module
 
 class BaseApplication: Application() {
 
-  private val appModule = module {
-    BaseRepositoryModule
-    viewModel { MainViewModel2() }
-
-  }
+  private val appModule = listOf(BaseRepositoryModule, ViewModelModule)
 
   override fun onCreate() {
     super.onCreate()
-    startKoin(this, listOf(appModule))
+    startKoin(this, appModule)
   }
 }

@@ -7,11 +7,10 @@ import com.example.bd0631.baseproject.base.BaseFragment
 import com.example.bd0631.baseproject.databinding.MainFragmentBinding
 import javax.inject.Inject
 
-class MainFragment @Inject constructor():
-    BaseFragment<MainFragmentBinding, MainViewModel2>()
-{
+class MainFragment @Inject constructor() :
+    BaseFragment<MainFragmentBinding, MainViewModel2>() {
 
-  override val layoutId: Int  = R.layout.main_fragment
+  override val layoutId: Int = R.layout.main_fragment
   override val viewModelClass = MainViewModel2::class
 
   companion object {
@@ -23,7 +22,6 @@ class MainFragment @Inject constructor():
     viewModel.isLoading.observe(this, Observer {
       Log.d("Observed", "Observed")
     })
+
   }
-
-
 }

@@ -8,9 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.bd0631.baseproject.BR
-import org.koin.android.ext.android.inject
-import org.koin.android.viewmodel.ext.android.getViewModelByClass
-import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.android.viewmodel.ext.android.viewModelByClass
 import kotlin.reflect.KClass
 

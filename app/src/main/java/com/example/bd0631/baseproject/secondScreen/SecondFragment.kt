@@ -15,7 +15,7 @@ class SecondFragment : BaseFragment<SecondFragmentBinding, SecondViewModel>() {
       return SecondFragment()
           .apply {
             this.arguments = Bundle().apply {
-              putString("TEST", test)
+              putString("TESTs", test)
             }
           }
     }

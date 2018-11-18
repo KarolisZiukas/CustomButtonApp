@@ -87,4 +87,11 @@ dependencies {
     implementation 'org.koin:koin-core:1.0.1'
     implementation 'org.koin:koin-android-viewmodel:1.0.1'
     implementation "org.koin:koin-androidx-scope:1.0.1"
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    compile 'com.squareup.retrofit2:converter-moshi:2.4.0'
+
+    //Moshi
+    implementation "com.squareup.moshi:moshi:1.8.0"
 }

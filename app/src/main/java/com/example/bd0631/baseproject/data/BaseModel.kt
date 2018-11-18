@@ -1,4 +1,4 @@
-package com.example.bd0631.baseproject.Database
+package com.example.bd0631.baseproject.data
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
